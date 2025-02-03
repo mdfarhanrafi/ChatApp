@@ -10,6 +10,7 @@ import Navbar from "@/components/navbar"
 
 export default function SignIn() {
   const { authUser, isCheckingAuth, isLoggingIn,login,setAuthUser,checkAuth } = useAuthStore()
+  
   const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
@@ -57,9 +58,9 @@ export default function SignIn() {
     }
   }, [authUser, isCheckingAuth, router])
   
-  if (isCheckingAuth) {
-    return <Loader />
-  }
+  // if (isCheckingAuth) {
+  //   return <Loader />
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!validateForm()) return
