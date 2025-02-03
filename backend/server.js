@@ -8,16 +8,16 @@ import {app, server } from './lib/socket.js'
 const port =process.env.PORT || 5001 
 
 //CORS configuration
-// const corsOptions = {
-//     origin: "*", // Replace with your frontend URL
-//     credentials: true,
-//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//     allowedHeaders: ['Content-Type', 'Authorization']
-// }
+const corsOptions = {
+    origin: ['https://chat-app-blush-phi.vercel.app'], // Replace with your frontend URL
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}
 
 app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(cors(corsOptions))
 
 
 
