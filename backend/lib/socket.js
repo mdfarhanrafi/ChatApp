@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://connect-omega-liard.vercel.app"],
+    origin: ["https://chat-app-blush-phi.vercel.app"],
   },
 });
 export function getReceiverSocketId(userId) {
