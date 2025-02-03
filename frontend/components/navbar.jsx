@@ -14,6 +14,9 @@ export default function Navbar() {
     logout();
     router.push('/signin')
   }
+  const gotoProfile =()=>{
+    router.push('/profile')
+  }
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-[#2ECC71] px-4 lg:px-6">
     <div className="flex h-14 items-center justify-between">
@@ -29,11 +32,11 @@ export default function Navbar() {
           <Settings className="h-5 w-5" />
           <span className="sr-only">Settings</span>
         </Button>
-        <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
+        <Button onClick={gotoProfile} variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
           <User className="h-5 w-5" />
           <span className="sr-only">Profile</span>
         </Button>
-        <Button variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
+        <Button onClick={handlelogout} variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
           <LogOut className="h-5 w-5" />
           <span className="sr-only">Logout</span>
         </Button>
