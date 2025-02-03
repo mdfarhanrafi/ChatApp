@@ -10,9 +10,9 @@ const Chat = () => {
   const { authUser, isCheckingAuth, checkAuth } = useAuthStore()
   const router = useRouter()
   const {selectedUser} = useChatStore()
-  // useEffect(()=>{ 
-  //     checkAuth()
-  // },[checkAuth])
+  useEffect(()=>{ 
+      checkAuth()
+  },[checkAuth])
   useEffect(() => {
     if (!isCheckingAuth && !authUser) {
       router.push("/signin")
