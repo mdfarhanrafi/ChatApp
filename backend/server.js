@@ -9,7 +9,7 @@ const port =process.env.PORT | 5001
 
 //CORS configuration
 const corsOptions = {
-    origin: 'https://connect-omega-liard.vercel.app/', // Replace with your frontend URL
+    origin: 'https://connect-omega-liard.vercel.app', // Replace with your frontend URL
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
