@@ -9,7 +9,7 @@ import AuthImagePattern from "@/components/authImagePatter"
 import Loader from "@/components/loader"
 
 export default function SignIn() {
-  const { authUser, isCheckingAuth, isLoggingIn,login,checkAuth } = useAuthStore()
+  const { authUser, isCheckingAuth, isLoggingIn,login,setAuthUser,checkAuth } = useAuthStore()
   const router = useRouter()
   const [formData, setFormData] = useState({
     email: "",
@@ -48,9 +48,9 @@ export default function SignIn() {
       }))
     }
   }
-  useEffect(()=>{
-    checkAuth()
-},[])
+//   useEffect(()=>{
+//     checkAuth()
+// },[])
   useEffect(() => {
     if (!isCheckingAuth && authUser) {
       router.push("/chat")
@@ -64,6 +64,10 @@ export default function SignIn() {
     e.preventDefault()
     if (!validateForm()) return
     const result = await login(formData)
+    if (result.status == 201) {
+      setAuthUser(result.data)
+      router.push('/chat')
+    }
   }
 
   return (
