@@ -16,6 +16,7 @@ export const useAuthStore = create((set,get) =>({
  checkAuth : async () =>{
     try {
         const res = await axiosInstance.get('/auth/check') 
+        console.log(res,"coming from authstore")
         set({authUser:res.data});
         get().connectSocket() 
     } catch (error) {
@@ -44,6 +45,7 @@ export const useAuthStore = create((set,get) =>({
     set({ isLoggingIn: true });
     try {
       const res = await axiosInstance.post("/auth/login", data);
+      console.log(res,"ami login")
       set({ authUser: res.data });
       toast.success("Logged in successfully");
       get().connectSocket();

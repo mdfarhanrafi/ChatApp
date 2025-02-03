@@ -1,5 +1,4 @@
 "use client"
-
 import { useState,useEffect } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
@@ -7,6 +6,7 @@ import { MessageSquare, Loader2 } from "lucide-react"
 import { useAuthStore } from "@/store/useAuthStore"
 import AuthImagePattern from "@/components/authImagePatter"
 import Loader from "@/components/loader"
+import Navbar from "@/components/navbar"
 
 export default function SignIn() {
   const { authUser, isCheckingAuth, isLoggingIn,login,setAuthUser,checkAuth } = useAuthStore()
@@ -48,9 +48,9 @@ export default function SignIn() {
       }))
     }
   }
-//   useEffect(()=>{
-//     checkAuth()
-// },[])
+  useEffect(()=>{
+    checkAuth()
+},[])
   useEffect(() => {
     if (!isCheckingAuth && authUser) {
       router.push("/chat")
@@ -64,10 +64,11 @@ export default function SignIn() {
     e.preventDefault()
     if (!validateForm()) return
     const result = await login(formData)
-    if (result.status == 201) {
-      setAuthUser(result.data)
-      router.push('/chat')
-    }
+    console.log(result,"coming from signin")
+    // if (result.status == 201) {
+    //   setAuthUser(result.data)
+    //   router.push('/chat')
+    // }
   }
 
   return (
