@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://chat-app-blush-phi.vercel.app"],
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true,
   },
