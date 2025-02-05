@@ -58,18 +58,18 @@ export default function SignIn() {
     }
   }, [authUser, isCheckingAuth, router])
   
-  // if (isCheckingAuth) {
-  //   return <Loader />
-  // }
+  if (isCheckingAuth) {
+    return <Loader />
+  }
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!validateForm()) return
     const result = await login(formData)
-    console.log(result,"coming from signin")
-    // if (result.status == 201) {
-    //   setAuthUser(result.data)
-    //   router.push('/chat')
-    // }
+
+    if (result.status == 200) {
+      setAuthUser(result.data)
+      router.push('/chat')
+    }
   }
 
   return (
