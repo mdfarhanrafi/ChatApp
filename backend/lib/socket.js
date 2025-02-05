@@ -7,8 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: ["https://chatapp-xy0c.onrender.com"],
-    methods: ["GET", "POST"],
+    origin: ["https://chat-app-blush-phi.vercel.app"],
     credentials: true,
   },
 });

@@ -10,9 +10,9 @@ const port =process.env.PORT || 5001
 //CORS configuration
 const corsOptions = {
     origin: ['https://chat-app-blush-phi.vercel.app'], // Replace with your frontend URL
-    credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    credentials: true
+    // methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    // allowedHeaders: ['Content-Type', 'Authorization']
 }
 
 app.use(express.json())
