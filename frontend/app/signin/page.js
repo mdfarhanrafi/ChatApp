@@ -49,9 +49,9 @@ export default function SignIn() {
       }))
     }
   }
-//   useEffect(()=>{
-//     checkAuth()
-// },[checkAuth])
+  useEffect(()=>{
+    checkAuth()
+},[])
 
   useEffect(() => {
     if (!isCheckingAuth && authUser) {
