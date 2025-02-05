@@ -1,5 +1,4 @@
 "use client"
-
 import Link from "next/link"
 import { MessageSquare, Settings, User, LogOut } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -10,10 +9,7 @@ import { useRouter } from "next/navigation"
 export default function Navbar() {
   const { authUser, logout } = useAuthStore()
   const router= useRouter()
-  const handlelogout =()=>{
-    logout();
-    router.push('/signin')
-  }
+ 
   const gotoProfile =()=>{
     router.push('/profile')
   }
@@ -36,7 +32,7 @@ export default function Navbar() {
           <User className="h-5 w-5" />
           <span className="sr-only">Profile</span>
         </Button>
-        <Button onClick={handlelogout} variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
+        <Button onClick={logout} variant="ghost" size="icon" className="text-white hover:bg-white/10 hover:text-white">
           <LogOut className="h-5 w-5" />
           <span className="sr-only">Logout</span>
         </Button>
