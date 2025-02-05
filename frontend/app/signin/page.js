@@ -49,9 +49,10 @@ export default function SignIn() {
       }))
     }
   }
-  useEffect(()=>{
-    checkAuth()
-},[checkAuth])
+//   useEffect(()=>{
+//     checkAuth()
+// },[checkAuth])
+
   useEffect(() => {
     if (!isCheckingAuth && authUser) {
       router.push("/chat")
